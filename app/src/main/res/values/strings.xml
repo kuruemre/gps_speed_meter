@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GPS SPEED</string>
+
+    <string-array name="mode_options">
+        <item>km/h</item>
+        <item>h/km</item>
+        <item>m/h</item>
+    </string-array>
+</resources>
