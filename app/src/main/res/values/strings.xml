@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GPS SPEED</string>
+    <string name="app_name">Gps Speedometer Compass</string>
 
     <string-array name="mode_options">
         <item>km/h</item>

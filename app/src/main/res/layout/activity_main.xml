@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#87CEFA"
     tools:context=".MainActivity">
+
+
+
+
     <TextView
         android:id="@+id/speedometer_text_view"
         android:layout_width="wrap_content"
@@ -21,6 +26,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:id="@+id/direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/speedometer_text_view"
+        app:layout_constraintEnd_toEndOf="@+id/speedometer_text_view"
+        app:layout_constraintStart_toStartOf="@+id/speedometer_text_view"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp" />
+    <ImageView
+        android:id="@+id/compass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/baseline_explore_black_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/direction"
+        app:layout_constraintEnd_toEndOf="@+id/direction"
+        app:layout_constraintStart_toStartOf="@+id/direction"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textViewNorth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="N"
+        android:textColor="#FF0000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/compass"
+        app:layout_constraintEnd_toEndOf="@+id/compass"
+        app:layout_constraintStart_toStartOf="@+id/compass" />
 
     <TextView
         android:id="@+id/speed_unit"
@@ -36,8 +73,28 @@
         app:layout_constraintTop_toBottomOf="@+id/speedometer_text_view"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-
     <!-- Bottom buttons container -->
+
+
+    <!--
+    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Record Odometer"
+        android:textColor="#2E00FA"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_buttons_container"
+        app:layout_constraintEnd_toEndOf="@+id/bottom_buttons_container"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/bottom_buttons_container"
+        app:layout_constraintTop_toTopOf="@+id/bottom_buttons_container"
+        app:layout_constraintVertical_bias="0.5" /> -->
     <LinearLayout
         android:id="@+id/bottom_buttons_container"
         android:layout_width="match_parent"
@@ -74,8 +131,26 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableStart="@drawable/baseline_rocket_black_24dp"
-            android:text="m/s"/>
+            android:text="m/h"/>
 
     </LinearLayout>
+
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speedometer_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8962230903240284/2644656584">
+    </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
